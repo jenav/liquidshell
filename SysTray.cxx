@@ -54,6 +54,7 @@ SysTray::SysTray(DesktopPanel *parent)
   connect(parent, &DesktopPanel::rowsChanged, this, &SysTray::fill);
 
   QHBoxLayout *hbox = new QHBoxLayout(this);
+  hbox->setContentsMargins(QMargins());
 
   vbox = new QVBoxLayout;
   vbox->setContentsMargins(QMargins());
@@ -62,6 +63,7 @@ SysTray::SysTray(DesktopPanel *parent)
   QFrame *separator = new QFrame;
   separator->setFrameStyle(QFrame::Plain);
   separator->setFrameShape(QFrame::VLine);
+  separator->setContentsMargins(0, 7, 0, 7);
 
   appsVbox = new QVBoxLayout;
   appsVbox->setContentsMargins(QMargins());
